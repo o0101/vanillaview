@@ -53,7 +53,7 @@ Third, add code to `button.js`:
   Button().to(domContainer, 'innerhtml');
 
   function Button() {
-    return s`
+    return trolley.s`
       <button click=${() => State.clicked = true}>
         Click
       </button>
