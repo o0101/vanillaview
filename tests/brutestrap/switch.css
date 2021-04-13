@@ -1,0 +1,14 @@
+.checkbox-group,
+.radio-group {
+  display: flex; 
+  flex-direction: column;
+  min-width: 11em;
+}
+
+
+.checkbox-group {
+}
+
+.radio-group {
+
+}

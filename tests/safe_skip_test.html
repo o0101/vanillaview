@@ -1,0 +1,67 @@
+<style>
+  article::before {
+    display: block;
+    content: "Class=" attr(class);
+    background: #eee;
+  }
+</style>
+<script type=module defer>
+  import {R} from '../r.js';
+
+  const $ = R;
+  
+  const {attrskip,skip} = R;
+
+  const S = {
+    attr: `<` + `script>alert('abc');<` + `/script>`,
+    title: `<` + `script>alert('def');<` + `/script>`,
+    content: `<` + `script>alert('ghi');<` + `/script>`
+  };
+
+  safeTests(S).to('body','beforeEnd');
+  skipTests(S).to('body','beforeEnd');
+  safeSkipTests(S).to('body','beforeEnd');
+
+  function safeTests(s) {
+    return $`${{key:'test1'}}
+      Safe tests
+      <article class="${(s.attr)} ${s.attr}">
+        <h1>${(s.title)} ${s.title}</h1>
+        <p>
+          ${(s.content)} ${s.content}
+        </p>
+      </article>
+    `;
+  }
+
+  function skipTests(s) {
+    return $`${{key:'test2'}}
+      Skip tests
+      <article class="${attrskip(s.attr)} ${s.attr}">
+        <h1>Skipped: ${skip(s.title)} Normal: ${s.title}</h1>
+        <p>
+          Skipped: ${skip(s.content)} Normal: ${s.content}
+        </p>
+      </article>
+    `;
+  }
+
+  function safeSkipTests(s) {
+    return $`${{key:'test3'}}
+      Skip safe tests
+      <article class="${attrskip((s.attr))} ${s.attr}">
+        <h1>Skipped: ${skip((s.title))} Normal: ${s.title}</h1>
+        <p>
+          Skipped: ${skip((s.content))} Normal: ${s.content}
+        </p>
+      </article>
+      <s>Safe skip tests</s> (safe cannot wrap anything that's not a primitive)
+      <article class="${(attrskip(s.attr))} ${s.attr}">
+        <h1>Skipped: ${(skip(s.title))} Normal: ${s.title}</h1>
+        <p>
+          Skipped: ${(skip(s.content))} Normal: ${s.content}
+        </p>
+      </article>
+    `;
+  }
+</script>

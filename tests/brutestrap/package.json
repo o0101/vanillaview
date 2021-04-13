@@ -1,0 +1,65 @@
+{
+  "_from": "brutestrap@^1.5.4",
+  "_id": "brutestrap@1.5.4",
+  "_inBundle": false,
+  "_integrity": "sha512-aC1C5biy91/cKSS8Vz6tm9zuY0Fw2bl+/DE2WWlrNTiTOLdCaAfEeU4swi9iTow/1Olls38zTYc8B4gMdVEBjQ==",
+  "_location": "/brutestrap",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "brutestrap@^1.5.4",
+    "name": "brutestrap",
+    "escapedName": "brutestrap",
+    "rawSpec": "^1.5.4",
+    "saveSpec": null,
+    "fetchSpec": "^1.5.4"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://registry.npmjs.org/brutestrap/-/brutestrap-1.5.4.tgz",
+  "_shasum": "fd36458ef3c9c07ef174281447002c515dfab9ac",
+  "_spec": "brutestrap@^1.5.4",
+  "_where": "/home/cris7fe/trolley.js",
+  "author": {
+    "name": "@dosy"
+  },
+  "bugs": {
+    "url": "https://github.com/crislin2046/brutestrap/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "trolleyist-web": "^1.9.1",
+    "jtype-system": "^1.0.8",
+    "maskingtape.css": "^1.1.0"
+  },
+  "deprecated": false,
+  "description": "A port of Blueprint/React-Bootstrap UI kit components to Trolley.js and CSS Grid, energized by the pursuit of minimalist code and minimalist design in all things.",
+  "homepage": "https://github.com/crislin2046/brutestrap#readme",
+  "keywords": [
+    "UI",
+    "ui-kit",
+    "blueprint",
+    "palantir",
+    "bootstrap",
+    "trolleyist",
+    "trolley.js",
+    "dosy",
+    "dosyago",
+    "ui-components",
+    "components",
+    "widgets"
+  ],
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "name": "brutestrap",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crislin2046/brutestrap.git"
+  },
+  "scripts": {
+    "test": "serve -p 8080 -s"
+  },
+  "version": "1.5.4"
+}

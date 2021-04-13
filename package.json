@@ -1,0 +1,27 @@
+{
+  "name": "trolleyjs",
+  "version": "1.0.879",
+  "description": "Trolley",
+  "main": "trolley.js",
+  "scripts": {
+    "test": "serve -p 8080"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/c9fe/trolleyjs.git"
+  },
+  "keywords": [
+    "trolley"
+  ],
+  "author": "@dosy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/c9fe/trolleyjs/issues"
+  },
+  "homepage": "https://github.com/c9fe/trolleyjs#readme"
+}

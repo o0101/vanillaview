@@ -1,0 +1,197 @@
+/** styles for inputs **/ 
+  /** normalizing input styles **/
+    input:not([type="file"]), input[type="text"], input[type="radio"], input[type="checkbox"], 
+    textarea, [contenteditable] {
+      border: thin solid silver;
+      box-sizing: border-box;
+      margin: 0;
+      box-shadow: none;
+      border-radius: 0;
+      background-clip: padding-box;
+      touch-action: none;
+      font-family: inherit;
+      padding: 0 0.35em;
+    }
+
+    input[type="radio"], input[type="checkbox"] {
+      margin: auto 0.35em;
+    }
+
+    button, input[type="submit"], input[type="image"], input[type="reset"], input[type="button"] {
+      padding: 0.25em 0.5em;
+    }
+
+    button, input[type="submit"], input[type="image"], input[type="reset"], input[type="button"], .label-text {
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      -moz-user-select: none;
+      -ms-touch-action: none;
+      -ms-touch-select: none;
+      touch-action: none;
+      user-select: none;
+      -webkit-touch-callout: none;
+    }
+
+    select[multiple] { 
+      overflow: auto; 
+      height: 6.75em;
+    }
+
+    textarea { resize: none; }
+
+    .multiline textarea, .multiline [contenteditable] {
+      padding: 0.35em;
+      max-width: 55ch;
+      min-width: 25ch;
+      min-height: 4.15em;
+    }
+
+  /** layout perfection **/ 
+    .input {
+      display: flex;
+      align-items: stretch;
+      margin: 0.75em 0;
+      box-sizing: border-box;
+    }
+
+    label {
+      display: inline-flex;
+      align-items: stretch;
+      min-height: 1.625em;
+    }
+
+    .label-text:empty {
+      margin: 0;
+    }
+
+    .label-text {
+      margin-right: 0.25em;
+      padding: 0;
+      align-self: center;
+    }
+
+    .input.inline { display: inline-flex; }
+
+    .input.multiline,     
+    .input.multiline label:not(.row) { 
+      align-items: start; 
+      flex-direction: column;
+    }
+
+    label.row {
+      line-height: 1.625em;
+    }
+
+    .input.flex-col { flex-direction: column; }
+
+    .input.spaced:not(.multiline) label {
+      margin-right: 0.35em;
+    }
+
+    .input.spaced.multiline .label-text,
+    .input.spaced.multiline > label {
+      margin-bottom: 0.35em;
+    }
+
+    .input.multiline .label-text {
+      /** this normalizes label vertical align on Chrome and Safari, trying margins/padding gives 1 pixel errors **/
+      align-self: start;
+    }
+
+    /** this gives options similar height and layout to buttons in chrome at least. **/
+    select, option { 
+      text-align: center; 
+      font-size: small;
+    }
+
+    select:not([multiple]) {
+      padding: 0.1em 0.15em;
+    }
+
+    option {
+      box-sizing: border-box;
+      height: 2em;
+      border: 2px outset transparent;
+      padding: 0.25em 0.35em;
+    }
+
+  /** tag input **/
+    div.tag-editor {
+      flex-wrap: wrap;
+    }
+
+    div.tag-editor,
+    div.tag-editor div {
+      display: inline-flex;
+      align-items: start;
+    }
+
+    span.tag {
+      display: inline-block;
+      margin: 0 0.7em 0.7em 0;
+      font-size: smaller;
+      text-decoration: underline;
+      min-height: 0.85em;
+    }
+
+  /** spinner integration **/
+    button .spinner {
+      display: none;
+      vertical-align: middle;
+      width: 0; 
+      height: 0;
+      transition: width 0.2s ease;
+    }
+
+    button.active .spinner {
+      display: inline-block;
+      width: 0.8em;
+      height: 0.8em;
+      margin-left: 0.25em;
+    }
+
+  /** special button styles **/
+    button, input[type="submit"], input[type="image"], input[type="reset"], input[type="button"] {
+      border: thin solid silver;
+      color: darkslategray;
+      text-shadow: 0.25px 0.25px 0 #ececfd;
+    } 
+
+  /** vertically center spin buttons **/
+    ::-webkit-inner-spin-button { align-self: center; }
+
+  /** special input styles **/
+    /* remove spin buttons from number */
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+      input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+    /* make safari controls have silver border */
+      select, button {
+        border-color: silver;
+        background: linear-gradient(to top, gainsboro, snow);
+        font-size: small;
+        border-radius: 0;
+        margin: 0;
+      }
+
+
+  /** states **/
+    :focus {
+      z-index: 2; /* to show outline above adjacent */
+      outline-style: solid;
+      outline-offset: -1px;
+      outline-color: dodgerblue;
+      outline-width: 1px;
+    }
+
+    button, input, textarea, [contenteditable], option, select {
+      font-size: small;
+    }
+
+
+    

@@ -1,0 +1,52 @@
+<script>
+  const mo = new MutationObserver((mutations)=> {
+    const AddedElements = [];
+    const RemovedElements = [];
+    for ( const mutation of mutations ) {
+      const addedElements = Array.from(mutation.addedNodes).filter(x => x.nodeType == Node.ELEMENT_NODE ); 
+      const removedElements = Array.from(mutation.removedNodes).filter(x => x.nodeType == Node.ELEMENT_NODE ); 
+      AddedElements.push(...addedElements);
+      RemovedElements.push(...removedElements);
+    }
+    if ( AddedElements.length || RemovedElements.length ) {
+      console.log({AddedElements,RemovedElements});
+    }
+  });
+  mo.observe(document.documentElement, {childList:true, subtree:true});
+</script>
+<script type=module defer>
+  import {s} from '../trolley.js';
+
+  const $ = s;
+
+  self.firsth1 = null;
+  self.secondh1 = null;
+
+
+  // A trolley template uses the `s` template tag:
+  let sayHello = (name) => s`<h1 bond=${el => firsth1 = el}>Hello ${name}</h1>`;
+
+  // It's rendered with the `to()` function:
+  sayHello('World').to(document.body, 'afterBegin');
+
+  // And re-renders only update the data that changed, without
+  // VDOM diffing!
+  // And it automagically knows WHERE to update those nodes. 
+  setTimeout(() => sayHello('Everyone'), 1000);
+
+  setTimeout(() => { 
+    secondh1 = document.querySelector('h1'); 
+    alert(firsth1 === secondh1) 
+  }, 3000);
+
+
+  // the automagical updating even works with keys, 
+  // just include a template value that's an object with a 'key' property
+
+  let keyedSayHello = (name, key) => $`${{key}} <p>I am ${name}</p>`;
+
+  keyedSayHello('Peter', 1).to(document.body, 'beforeEnd');
+  keyedSayHello('Adam', 2).to(document.body, 'beforeEnd');
+  setTimeout(() => keyedSayHello('Michael-Peter', 1), 4000);
+  setTimeout(() => keyedSayHello('Cain & Abel', 2), 3000);
+</script>
