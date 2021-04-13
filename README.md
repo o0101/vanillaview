@@ -64,7 +64,13 @@ Third, add code to `button.js`:
 
 And you're done!
 
-You'll notice that we added an event listener for the `click` event simply by adding a function to the click attribute in the HTML. All event handlers are added this way, using the events name, without any capitalization. If you want to add flags (like 'passive', or 'once') you can separate them with `:`, like ``const PassiveScroller = c`<div scroll:passive:once=${ev => console.log('I scrolled', ev)}></div>``
+You'll notice that we added an event listener for the `click` event simply by adding a function to the click attribute in the HTML. All event handlers are added this way, using the events name, without any capitalization. If you want to add flags (like 'passive', or 'once') you can separate them with `:`, like 
+
+```js
+const PassiveScroller = c`
+  <div scroll:passive:once=${ ev => console.log('I scrolled', ev) }></div>
+`;
+```
 
 ## Installation
 
