@@ -107,14 +107,14 @@ The benefits of singletons are effortless updates. Every time you call them, the
 
 With all these benefits why would you ever want to use `c` components? `c` components are for components (or clones). Every time you call a `c` component, it creates new nodes. You might want to use this where you need a lot of widgets but you don't need or want to add keys to them to keep track of them. You need to place those nodes in the document, either using `to` or via nesting, like,
 
-```
+```js
 const Child = count => c`<span>${count}</span>`;
 const Parent => s`<div>${Child(0)}, ${Child(10)}</div>`;
 ```
 
 Both `s` and `c` components can be arbitrarily nested inside each other. To add a key to an `s` component, simply do like so,
 
-```
+```js
 const KeyedSingleton = (key, name) => s`{{key}}<div>I'm unique. My name is now ${name}</div>`;
 
 KeyedSingleton('0', 'larry').to('body','afterbegin');
@@ -122,7 +122,7 @@ KeyedSingleton('1, 'laura').to('body','afterbegin');
 KeyedSingleton('0', 'laura');
 KeyedSingleton('0', 'larry');
 
-// how interesting, larry and laura swapped names
+// larry and laura swapped names
 ```
 
 ## Contributing
