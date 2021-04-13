@@ -7,6 +7,15 @@ Trolley is a JavaScript library for building user interfaces.
 
 [Learn how to use Trolley in your own project](https://github.com/i5ik/trolley/blob/main/docs/tutorial.md).
 
+## Haiku
+
+```poetry
+When you get around
+To taking over the world
+The humble shopping trolley
+Will be your steadfast friend
+```
+
 ## Installation
 
 Trolley has been designed for gradual adoption from the start, and **you can use as little or as much Trolley as you need**
