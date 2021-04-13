@@ -1,11 +1,11 @@
-# [Trolley](https://github.com/i5ik/trolle/) &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/i5ik/trolley/blob/master/LICENSE) [![npm version](https://img.shields.io/npm/v/trolleyjs.svg?style=flat)](https://www.npmjs.com/package/trolleyjs) 
+# [Trolley](https://github.com/i5ik/trolle/) &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/i5ik/trolley/blob/main/LICENSE) [![npm version](https://img.shields.io/npm/v/trolleyjs.svg?style=flat)](https://www.npmjs.com/package/trolleyjs) 
 
 Trolley is a JavaScript library for building user interfaces.
 
 * **Declarative:** Trolley makes it painless to create interactive UIs. Design simple views for each state in your application, and Trolley will efficiently update and render just the right components when your data changes. Declarative views make your code more predictable, simpler to understand, and easier to debug.
 * **Component-Based:** Build encapsulated components that manage their own state, then compose them to make complex UIs. Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep state out of the DOM.
 
-[Learn how to use Trolley in your own project](https://github.com/i5ik/trolley/blob/master/docs/tutorial.md).
+[Learn how to use Trolley in your own project](https://github.com/i5ik/trolley/blob/main/docs/tutorial.md).
 
 ## Installation
 
@@ -38,13 +38,13 @@ You'll notice that we used an HTML syntax; [we call it HTML](https://www.w3schoo
 
 The main purpose of this repository is to continue evolving Trolley core, making it faster and easier to use. Development of Trolley happens in the common wealth of GitHub, and we are grateful to the community for contributing bugfixes and improvements. Read below to learn how you can take part in improving Trolley.
 
-### [Code of Conduct](https://code.fb.com/codeofconduct)
+### Code of Conduct
 
-Facebook has adopted a Code of Conduct that we expect project participants to adhere to. Please read [the full text](https://github.com/i5ik/trolleyjs/blob/master/docs/coc.md) so that you can understand what actions will and will not be tolerated.
+Dosyago has adopted a Code of Conduct that we expect project participants to adhere to. Please read [the full text](https://github.com/i5ik/trolleyjs/blob/main/docs/coc.md) so that you can understand what actions will and will not be tolerated.
 
-### [Contributing Guide](https://reactjs.org/contributing/how-to-contribute.html)
+### Contributing Guide
 
-Open a issue to propose a PR, get it approved, sign the [CLA](https://github.com/i5ik/trolleyjs/blob/master/docs/CLA.md), and submit a PR.
+Open a issue to propose a PR, get it approved, sign the [CLA](https://github.com/i5ik/trolleyjs/blob/main/docs/CLA.md), and submit a PR.
 
 ### License
 
