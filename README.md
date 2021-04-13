@@ -131,12 +131,13 @@ const KeyedSingleton = (key, name) => s`
   </div>
 `;
 
+// initial insert
 KeyedSingleton('0', 'larry').to('body','afterbegin');
-KeyedSingleton('1, 'laura').to('body','afterbegin');
-KeyedSingleton('0', 'laura');
-KeyedSingleton('0', 'larry');
+KeyedSingleton('1', 'laura').to('body','afterbegin');
 
-// larry and laura swapped names
+// update
+KeyedSingleton('0', 'laura');
+KeyedSingleton('1', 'larry');
 
 ```
 
