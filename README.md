@@ -5,9 +5,11 @@ Trolley is a JavaScript library for building user interfaces.
 * **Declarative:** Trolley makes it painless to create interactive UIs. Design simple views for each state in your application, and Trolley will efficiently update and render just the right components when your data changes. Declarative views make your code more predictable, simpler to understand, and easier to debug.
 * **Component-Based:** Build encapsulated components that manage their own state, then compose them to make complex UIs. Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep state out of the DOM.
 
-[Learn how to use Trolley in your own project](https://github.com/i5ik/trolley/blob/main/docs/tutorial.md).
+[Learn how to use Trolley in your own project](#Learn).
 
-## Haiku
+## Learn
+
+First, the Trolley Haiku:
 
 > When you get around
 >
@@ -17,6 +19,51 @@ Trolley is a JavaScript library for building user interfaces.
 >
 > Will be your steadfast friend
 
+Now you can add a container to the HTML:
+
+```html
+
+  <!-- ... existing HTML ... -->
+
+  <div id=container></div>
+
+  <!-- ... existing HTML ... -->
+
+```
+
+Second, add some `<script>` tags:
+
+```html
+
+  <!-- Load Trolley. -->
+  <script src=https://unpkg.com/trolleyjs@latest/dist/trolley.js crossorigin></script>
+
+  <!-- Load our Trolley component. -->
+  <script src=button.js></script>
+
+```
+
+Third, add code to `button.js`:
+
+```js
+
+  const State = { clicked: false };
+  const domContainer = document.querySelector('#container');
+
+  Button().to(domContainer, 'innerHTML');
+
+  function Button() {
+    return s`
+      <button click=${() => State.clicked = true}>
+        Click
+      </button>
+    `;
+  }
+
+```
+
+And you're done!
+
 ## Installation
 
 Trolley has been designed for gradual adoption from the start, and **you can use as little or as much Trolley as you need**
@@ -24,6 +71,8 @@ Trolley has been designed for gradual adoption from the start, and **you can use
 ```console
 $ npm i --save trolleyjs
 ```
+
+or use a CDN, like in the above Learn section.
 
 ## Examples
 
