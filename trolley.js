@@ -48,9 +48,7 @@
   // main exports 
     Object.assign(s,{say,attrskip,skip,attrmarkup,markup,guardEmptyHandlers,die});
 
-    if ( DEBUG ) {
-      Object.assign(globalThis, {c, s, T}); 
-    }
+    Object.assign(globalThis, {trolley: {c, s, T}}); 
 
     export function s(p,...v) {
       return trolley(p,v);
