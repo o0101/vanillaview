@@ -1,226 +1,51 @@
-# 🌿 [exoteric](https://github.com/c9fe/exoteric) [![npm](https://img.shields.io/npm/v/exoteric.svg?label=&color=0080FF)](https://github.com/c9fe/exoteric/releases/latest) ![npm downloads total](https://img.shields.io/npm/dt/dumbass)
+# [Trolley](https://github.com/i5ik/trolle/) &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/i5ik/trolley/blob/master/LICENSE) [![npm version](https://img.shields.io/npm/v/trolleyjs.svg?style=flat)](https://www.npmjs.com/package/trolleyjs) 
 
-> The tool of choice for the madding crowd
+Trolley is a JavaScript library for building user interfaces.
 
-**Tooling shouldn't be hard to understand.**
+* **Declarative:** Trolley makes it painless to create interactive UIs. Design simple views for each state in your application, and Trolley will efficiently update and render just the right components when your data changes. Declarative views make your code more predictable, simpler to understand, and easier to debug.
+* **Component-Based:** Build encapsulated components that manage their own state, then compose them to make complex UIs. Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep state out of the DOM.
 
-Make components from cross-browser web standards without thinking too hard. 
+[Learn how to use Trolley in your own project](https://github.com/i5ik/trolley/blob/master/docs/tutorial.md).
 
-**exoteric** is a library to help. 
+## Installation
 
-Stats:
-
-- Built and gzipped: 17K
-
-## Why?
-
-> ### exoteric
->
-> /ˌɛksə(ʊ)ˈtɛrɪk/
->
-> *adjective* `FORMAL`
->
-> intended for or likely to be understood by the general public.
-
-### [Kernighan's Law](https://github.com/dwmkerr/hacker-laws#kernighans-law)
-
-> Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.
->
-> (Brian Kernighan)
-
-Kernighan's Law is named for [Brian Kernighan](https://en.wikipedia.org/wiki/Brian_Kernighan) and derived from a quote from Kernighan and Plauger's book [The Elements of Programming Style](https://en.wikipedia.org/wiki/The_Elements_of_Programming_Style):
-
-> Everyone knows that debugging is twice as hard as writing a program in the first place. So if you're as clever as you can be when you write it, how will you ever debug it?
-
-While hyperbolic, Kernighan's Law makes the argument that simple code is to be preferred over complex code, because debugging any issues that arise in complex code may be costly or even infeasible.
-
-## So, what's this?
-
-No JSX, no Shadow DOM, no fancy framworks, no opinions.
-
-- **Just HTML, CSS and JavaScript**—No JSX, no Shadow DOM, no fancy frameworks, no opinions. 
-- **Stop learning, stagnate!**—Use the syntax you already know. Stop learning new things. Do more with what's already here.
-- **Crazy and fun, but in a serious way**—exoteric is the tool for people who don't want to think too hard to make UI. 
-
-*To learn more*...oh wait, you already know enough. 
-
-### be exoteric
-
-```javascript     
-function Spin(n) {
-  return e`  
-    <div 
-      wheel:passive=${spin}
-      touchmove:passive=${move}
-    >
-      <h1>
-        <progress 
-          max=1000
-          value=${n}
-        ></progress>
-        <hr>
-        <input 
-          input=${step}
-          type=number 
-          value=${n}>
-    </div>
-  `;
-}
-```
-
-## Still not bored?
-
-You soon will be. Nothing notable here: [Play with the full example on CodePen](https://codepen.io/dosycorp/pen/OJPQQzB?editors=1000)
-
-See [even more boring code](https://github.com/c9fe/exoteric/blob/master/tests/rvanillatodo/src/app.js) in a 250 line [TodoMVC test](https://c9fe.github.io/exoteric/tests/rvanillatodo/)
-
-## Holy secular install mantras
-
-Install exoteric with npm:
+Trolley has been designed for gradual adoption from the start, and **you can use as little or as much Trolley as you need**
 
 ```console
-npm i --save exoteric
+$ npm i --save trolleyjs
 ```
 
-[Parcel](https://parceljs.org) or [Webpack](https://webpack.js.org) exoteric and import:
+## Examples
+
+Here is the first one to get you started:
 
 ```js
-import { e } from 'exoteric'
-```
-
-[See a CodeSandbox how-to of above](https://codesandbox.io/s/exoteric-playground-7drzg)
-
-Or import in a module:
-
-```html
-<script type=module>
-  import { e } from 'https://unpkg.com/exoteric'
-</script>
-```
-
-[See a CodePen how-to of above](https://codepen.io/dosycorp/pen/OJPQQzB?editors=1000)
-
---------
-
-# Basic Examples
-
-## Components
-
-### Defining 
-
-```js
-const Title = state => e`<h1>${state}</h1>`
-```
-
-### Nesting
-
-```js
-const Parent = state => e`<main>${Title(state)}</main>`;
-```
-
-### Inserting
-
-```js
-Parent("Hello").to('body', 'beforeEnd');
-```
-
-### Updating
-
-```js
-Parent("Greetings");
-let i = 1;
-setTimeout(() => Parent(`${i++} 'Hi's`), 3000);
-```
-
-### ToDo ~MVC~ Example
-
-```js
-function App(state) {
-  const {list} = state;
-  return e`
-    <header class=header>
-      <h1>todos</h1>
-      <input autofocus
-        class=new-todo 
-        placeholder="What needs to be done?"
-        keydown=${newTodoIfEnter} 
-      >
-    </header>
-    <main>
-      ${TodoList(list)}
-      ${Footer()}
-    </main>
-  `;
+function HelloMessage({ name }) {
+  return s`<div>Hello ${name}</div>`;
 }
 
-function TodoList(list) {
-  return e`
-    <ul class=todo-list>
-      ${list.map(Todo)}
-    </ul>
-  `;
-}
+HelloMessage({name:'Tay-anne'}).to(
+  document.getElementById('container'),
+  'afterbegin'
+);
 ```
 
-### Updating on events
+This example will render "Hello Tay-anne" into a container on the page.
 
-```js
-  function newTodoIfEnter(keyEvent) {
-    if ( keyEvent.key !== 'Enter' ) return;
-    
-    State.todos.push(makeTodo(keyEvent.target.value));
-    TodoList(State.todos);
-    keyEvent.target.value = '';
-  }
- ```
- 
-## Properties
+You'll notice that we used an HTML syntax; [we call it HTML](https://www.w3schools.com/html/). HTML is required to use Trolley, it makes code more readable, and writing it feels like writing HTML. If you're using Trolley as a `<script>` tag, you're all good; otherwise, and you'll never need a toolchain to handle it automatically.
 
-Do not exist. 
+## Contributing
 
-## Global State
+The main purpose of this repository is to continue evolving Trolley core, making it faster and easier to use. Development of Trolley happens in the common wealth of GitHub, and we are grateful to the community for contributing bugfixes and improvements. Read below to learn how you can take part in improving Trolley.
 
-is nothing special.
+### [Code of Conduct](https://code.fb.com/codeofconduct)
 
-## Routing 
+Facebook has adopted a Code of Conduct that we expect project participants to adhere to. Please read [the full text](https://github.com/i5ik/trolleyjs/blob/master/docs/coc.md) so that you can understand what actions will and will not be tolerated.
 
-```js
-function changeHash(e) {
-  e.preventDefault();
-  history.replaceState(null,null,e.target.href);
-  routeHash();
-}
+### [Contributing Guide](https://reactjs.org/contributing/how-to-contribute.html)
 
-function routeHash() {
-  switch(location.hash) {
-    case "#/active":                listActive(); break;
-    case "#/completed":             listCompleted(); break;
-    case "#/":          default:    listAll(); break;
-  }
-}
+Open a issue to propose a PR, get it approved, sign the [CLA](https://github.com/i5ik/trolleyjs/blob/master/docs/CLA.md), and submit a PR.
 
-function Routes() {
-  return e`
-    <ul class=filters>
-      <li>
-        <a href=#/ click=${changeHash}
-          class=${location.hash == "#/" ? 'selected' : ''}>All</a>
-      </li>
-      <li>
-        <a href=#/active click=${changeHash}
-          class=${location.hash == "#/active" ? 'selected' : ''}>Active</a>
-      </li>
-      <li>
-        <a href=#/completed click=${changeHash}
-          class=${location.hash == "#/completed" ? 'selected' : ''}>Completed</a>
-      </li>
-    </ul>
-  `
-}
-```
+### License
 
------
-
-*Most of the examples above are taken from in a 250 line [TodoMVC test](https://c9fe.github.io/exoteric/tests/rvanillatodo/), the [full code of which you can see here.](https://github.com/c9fe/exoteric/blob/master/tests/rvanillatodo/src/app.js).*
-
-# *Can you hear the people sing*
+Trolley is [MIT licensed](./LICENSE).
