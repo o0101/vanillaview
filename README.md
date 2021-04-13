@@ -115,7 +115,15 @@ const Parent => s`<div>${Child(0)}, ${Child(10)}</div>`;
 Both `s` and `c` components can be arbitrarily nested inside each other. To add a key to an `s` component, simply do like so,
 
 ```js
-const KeyedSingleton = (key, name) => s`{{key}}<div>I'm unique. My name is now ${name}</div>`;
+
+// add the key as the first slot in your component
+
+const KeyedSingleton = (key, name) => s`
+  {{key}}
+  <div>
+    I'm unique. My name is now ${name}
+  </div>
+`;
 
 KeyedSingleton('0', 'larry').to('body','afterbegin');
 KeyedSingleton('1, 'laura').to('body','afterbegin');
@@ -123,7 +131,10 @@ KeyedSingleton('0', 'laura');
 KeyedSingleton('0', 'larry');
 
 // larry and laura swapped names
+
 ```
+
+Keys always need to be strings. Any other type will throw an error.
 
 ## Contributing
 
