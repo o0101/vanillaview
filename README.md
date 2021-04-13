@@ -9,12 +9,10 @@ Trolley is a JavaScript library for building user interfaces.
 
 ## Haiku
 
-```poetry
-When you get around
-To taking over the world
-The humble shopping trolley
-Will be your steadfast friend
-```
+> When you get around
+> To taking over the world
+> The humble shopping trolley
+> Will be your steadfast friend
 
 ## Installation
 
