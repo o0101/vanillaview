@@ -64,6 +64,8 @@ Third, add code to `button.js`:
 
 And you're done!
 
+You'll notice that we added an event listener for the `click` event simply by adding a function to the click attribute in the HTML. All event handlers are added this way, using the events name, without any capitalization. If you want to add flags (like 'passive', or 'once') you can separate them with `:`, like `const PassiveScroller = c\`<div scroll:passive:once=${ev => console.log(`I scrolled`, ev)}></div>`
+
 ## Installation
 
 Trolley has been designed for gradual adoption from the start, and **you can use as little or as much Trolley as you need**
@@ -89,9 +91,39 @@ HelloMessage({name:'Tay-anne'}).to(
 );
 ```
 
-This example will render "Hello Tay-anne" into a container on the page.
+This example will render "Hello Tay-anne" into a container on the page. 
 
 You'll notice that we used an HTML syntax; [we call it HTML](https://www.w3schools.com/html/). HTML is required to use Trolley, it makes code more readable, and writing it feels like writing HTML. If you're using Trolley as a `<script>` tag, you're all good; otherwise, and you'll never need a toolchain to handle it automatically.
+
+The `to` function places your component where you want it on the page. It [supports all the locations that insertAdjacentHTML does](https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML) as well as 'replace' (which removes the location and replaces it with your component), and 'innerhtml' (which sets the `.innerHTML` property of the location to your component's HTML).
+
+## [Advanced Topic] s vs c
+
+Trolley provides two render functions: `s` and `c`. 
+
+`s` is for singleton components. These are things that you expect to have a single identity, and show up in only one location in your document. But note that these singletons can be keyed, a keyed singleton can show up in more than one location, but *only where its keys are different.* The singleton for each key will only exist in one place. 
+
+The benefits of singletons are effortless updates. Every time you call them, they will repaint their corresponding widget, with the minimal number of changes necessary. If you want to move a singleton to a new location in the document, you need to the `to` method on it again, like `Button().to(newLocation)`.
+
+With all these benefits why would you ever want to use `c` components? `c` components are for components (or clones). Every time you call a `c` component, it creates new nodes. You might want to use this where you need a lot of widgets but you don't need or want to add keys to them to keep track of them. You need to place those nodes in the document, either using `to` or via nesting, like,
+
+```
+const Child = count => c`<span>${count}</span>`;
+const Parent => s`<div>${Child(0)}, ${Child(10)}</div>`;
+```
+
+Both `s` and `c` components can be arbitrarily nested inside each other. To add a key to an `s` component, simply do like so,
+
+```
+const KeyedSingleton = (key, name) => s`{{key}}<div>I'm unique. My name is now ${name}</div>`;
+
+KeyedSingleton('0', 'larry').to('body','afterbegin');
+KeyedSingleton('1, 'laura').to('body','afterbegin');
+KeyedSingleton('0', 'laura');
+KeyedSingleton('0', 'larry');
+
+// how interesting, larry and laura swapped names
+```
 
 ## Contributing
 
