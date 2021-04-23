@@ -4,12 +4,18 @@ VanillaView is a JavaScript library for building user interfaces.
 
 * **Declarative:** VanillaView makes it painless to create interactive UIs. Design simple views for each state in your application, and VanillaView will efficiently update and render just the right components when your data changes. Declarative views make your code more predictable, simpler to understand, and easier to debug.
 * **Component-Based:** Build encapsulated components that manage their own state, then compose them to make complex UIs. Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep state out of the DOM.
+* **
 
 [Learn how to use VanillaView in your own project](#Learn).
 
 ## Features
 
 - minimal updates with no vDOM overhead
+- zero dependencies
+- no toolchain required
+- no context
+switching,
+- use as much or as little as you want
 
 ## Learn
 
