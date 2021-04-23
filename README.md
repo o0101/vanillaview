@@ -7,6 +7,10 @@ VanillaView is a JavaScript library for building user interfaces.
 
 [Learn how to use VanillaView in your own project](#Learn).
 
+## Features
+
+- minimal updates with no vDOM overhead
+
 ## Learn
 
 First, the VanillaView Haiku:
@@ -15,7 +19,7 @@ First, the VanillaView Haiku:
 >
 > To taking over the world
 >
-> The humble shopping vanillaview
+> The humble vanillaview
 >
 > Will be your steadfast friend
 
