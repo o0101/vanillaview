@@ -1,0 +1,73 @@
+:not(.step-scroll) {
+  scroll-behavior: smooth;
+}
+
+/* general semantic grid areas */
+  header {
+    grid-area: header;
+  }
+
+  footer {
+    grid-area: footer;
+  }
+
+  nav {
+    grid-area: nav;
+  }
+
+  aside {
+    grid-area: aside;
+  }
+
+  article {
+    grid-area: article;
+  }
+
+/* semantic responsive CSS-grid holygrail */
+  article.debug.holygrail * {
+    outline: 1px solid lime;
+    background: rgba(50,50,50,0.2);
+  }
+
+  article.holygrail {
+    display: grid;
+    grid-template-areas:
+      "header header header"
+      "nav article aside"
+      "footer footer footer";
+    grid-template-columns: 12.5em 1fr 12.5em;
+    grid-template-rows: auto 1fr auto;
+    grid-gap: 1em;
+    height: 100%;
+  }
+
+  article.holygrail nav {
+    margin-left: 0.5em;
+  }
+
+  article.holygrail aside {
+    margin-right: 0.5em;
+  }
+
+  @media (max-width: 767.98px) {
+    article.holygrail {
+      grid-template-areas:  
+        "header"
+        "nav"
+        "article"
+        "aside"
+        "footer";
+      grid-template-columns: 1fe;
+      grid-template-rows:
+        auto
+        minmax(5em, auto)
+        1fr
+        minmax(5em, auto)
+        auto;
+    }
+
+    article.holygrail nav, 
+    article.holygrail aside {
+      margin: 0;
+    }
+  }

@@ -1,0 +1,13 @@
+<main></main>
+<script type=module>
+  import {R} from '../r.js';
+
+  let value = 1;
+
+  R`
+    <details ${value == 1?'open':''}>
+      <summary>Should be open</summary>
+      Details
+    </details>
+  `.to('main', 'afterBegin');
+</script>

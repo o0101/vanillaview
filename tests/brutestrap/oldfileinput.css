@@ -1,0 +1,96 @@
+  /** bring as much consistency as possible to file inputs  **/
+    ::placeholder, input[type="file"] {
+      color: grey;
+      font-weight: normal;
+      font-family: inherit;
+    }
+
+    input[type="file"]::-webkit-file-upload-button {
+      display: inline-block;
+      padding: 0.25em 0.5em;
+      line-height: 135%;
+      background: aliceblue;
+      color: rgb(55,15,0);
+      font-family: inherit;
+      outline: none;
+      border-radius: 0 !important;
+      border: none;
+      border-right: 0.5em solid white;
+    }
+
+    input[type="file"] {
+      padding: 0;
+      padding-right: 0.5em;
+    }
+
+    /** ms only **/
+      ::-ms-browse {
+        padding: 0 0.5em;
+        margin: 0;
+        margin-left: -1em;
+        background: aliceblue;
+        color: rgb(55,15,0);
+        font-family: inherit;
+        border: none;
+        outline: none;
+        border-left: thin solid silver;
+      }
+
+      _:-ms-lang(x), input[type="file"] {
+        padding:0;
+        margin: 0;
+        border: thin solid silver;
+        width: 100%;
+        max-width: 666px;
+      }
+
+    /** safari only **/
+      _:default:not(:root:root), input[type="file"] {
+        /**
+          font-size: 0.75em;
+          line-height: 1;
+        **/
+        padding: 0.5em;
+      }
+
+      _:default:not(:root:root), input[type="file"]::-webkit-file-upload-button {
+        border: thin solid silver;
+      }
+
+    /** firefox only **/
+      @supports (-moz-appearance:meterbar) {
+        input[type="file"] {
+          padding: 0.2em;
+          line-height: 135%;
+        }
+      }
+
+    div.tag-editor, [contenteditable], textarea {
+      display: inline-block;
+      min-width: 25ch;
+      max-width: 55ch;
+      min-height: 2em;
+    }
+    input[type="file"]::-webkit-file-upload-button {
+      background: gainsboro;
+      color: rgba(50,50,50,0.75);
+      text-shadow: 0.25px 0.25px 0 #ececfd;
+    }
+
+    ::-ms-browse {
+      background: gainsboro;
+      color: rgba(50,50,50,0.75);
+      text-shadow: 0.25px 0.25px 0 #ececfd;
+    }
+    _:default:not(:root:root), input[type="file"]::-webkit-file-upload-button {
+      background: gainsboro;
+      color: rgba(50,50,50,0.75);
+      text-shadow: 0.25px 0.25px 0 #ececfd;
+    }
+  input[type="file"]:focus-within {
+    z-index: 2; /* to show outline above adjacent */
+    outline-style: solid;
+    outline-offset: -1px;
+    outline-color: dodgerblue;
+    outline-width: 1px;
+  }

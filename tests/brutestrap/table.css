@@ -1,0 +1,30 @@
+table {
+  border-spacing: 0 0;
+}
+
+td, th, tr, tbody, thead, table {
+  position: relative;
+}
+
+th {
+  text-align: left;
+}
+
+td {
+  white-space: nowrap;
+}
+
+td.row-header {
+  padding-right: 1em;
+}
+
+table .input,
+table input {
+  width: 100%;
+  border-color: transparent !important;
+  margin: 0;
+}
+
+table input[type="number"] {
+  text-align: right;
+}

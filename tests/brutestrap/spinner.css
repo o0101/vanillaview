@@ -1,0 +1,42 @@
+
+
+.spinner, .mover {
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+.spinner {
+  width: 4em;
+  height: 4em;
+  position: relative;
+  background-color: transparent;
+  --spinner-bg: currentColor;
+}
+
+@keyframes moveit {
+  0% {
+    transform: translate(0,0);
+  }
+  25% {
+    transform: translate(100%,0);
+  }
+  50% {
+    transform: translate(100%,100%);
+  }
+  75% {
+    transform: translate(0%,100%);
+  }
+}
+
+.mover {
+  position: absolute;
+  top: 0; left: 0;
+  width: 51.8%;
+  height: 51.8%;
+  border-radius: 51.8%;
+  background: var(--spinner-bg);
+  background: dodgerblue;
+  border: none;
+  animation: moveit 0.5s ease infinite;
+}
+

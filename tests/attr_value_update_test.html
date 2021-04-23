@@ -1,0 +1,61 @@
+<style>
+  article::before {
+    display: block;
+    content: "Class=" attr(class);
+    background: #eee;
+  }
+</style>
+<script type=module defer>
+  import {R} from '../r.js';
+
+  const $ = R;
+  
+  const sleep = ms => new Promise(res => setTimeout(res, ms));
+
+  const S1 = {
+    adjective: 'amazing',
+    verb: 'really perfecting',
+    pad: "    "
+  };
+
+  const S2 = {
+    adjective: 'femsplaining',
+    verb: 'evolving truly',
+    pad: "   maverick   "
+  };
+
+  attrValueTests(S1).to('body','beforeEnd');
+
+  start();
+
+  async function start() {
+    const article = document.querySelector('article');
+    let i = 0;
+    while(i++ < 5) {
+      attrValueTests(S2);
+      console.assert(article.getAttribute('class') == "something happening the femsplaining attr maverick is evolving truly okay wow maverick", `Class attribute is corrupt`);
+      await sleep(1000);
+      attrValueTests(S1);
+      console.assert(article.getAttribute('class') == "something happening the amazing attr is really perfecting okay wow", `Class attribute is corrupt`);
+      await sleep(1000);
+      article.classList.add('hot');
+      article.classList.remove('hot');
+    }
+  }
+
+  function attrValueTests(S) {
+    return $`
+      Attr value tests
+      <article class="something happening the ${S.adjective} attr ${S.pad} is ${S.verb} okay wow ${S.pad}">
+        <dl>
+          <dt>Attr 1
+          <dd>${S.adjective}
+          <dt>Attr 2
+          <dd>${S.pad}
+          <dt>Attr 3
+          <dd>${S.verb}
+        </dl>
+      </article>
+    `;
+  }
+</script>
