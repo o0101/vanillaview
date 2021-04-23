@@ -1,6 +1,6 @@
 {
   "name": "vanillaviewjs",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "description": "VanillaView",
   "main": "vanillaview.js",
   "scripts": {
