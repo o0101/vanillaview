@@ -13,8 +13,8 @@ VanillaView is a JavaScript library for building user interfaces.
 - minimal updates with no vDOM overhead
 - zero dependencies
 - no toolchain required
-- no stitching context, nor conceptual model. Use the existing 
-vanilla JavaScript 
+- no switching context, no switching conceptual model needed. Use the existing 
+vanilla JavaScript semantics you already know
 and HTML semantics you're already familiar with
 - use as much or as little as you want
 
