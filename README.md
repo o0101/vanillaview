@@ -1,10 +1,9 @@
 # [VanillaView](https://github.com/i5ik/vanillaview/) &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/i5ik/vanillaview/blob/main/LICENSE) [![npm version](https://img.shields.io/npm/v/vanillaviewjs.svg?style=flat)](https://www.npmjs.com/package/vanillaviewjs) 
 
-VanillaView is a JavaScript library for building user interfaces.
+VanillaView is a vanilla JS module for UI.
 
-* **Declarative:** VanillaView makes it painless to create interactive UIs. Design simple views for each state in your application, and VanillaView will efficiently update and render just the right components when your data changes. Declarative views make your code more predictable, simpler to understand, and easier to debug.
-* **Component-Based:** Build encapsulated components that manage their own state, then compose them to make complex UIs. Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep state out of the DOM.
-* **Easy:** Mixes well with many other codes and libraries, easy learning curve
+- No build-step
+- DOM-based, mutates in place
 
 [Learn how to use VanillaView in your own project](#Learn).
 
