@@ -135,7 +135,7 @@ Both `s` and `c` components can be arbitrarily nested inside each other. To add 
 // add the key as the first slot in your component
 
 const KeyedSingleton = (key, name) => s`
-  {{key}}
+  ${{key}}
   <div>
     I'm unique. My name is now ${name}
   </div>
