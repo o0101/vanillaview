@@ -19,16 +19,6 @@ and HTML semantics you're already familiar with
 
 ## Learn
 
-First, the VanillaView Haiku:
-
-> When you get around
->
-> To taking over the world
->
-> The humble vanillaview
->
-> Will be your steadfast friend
-
 Now you can add a container to the HTML:
 
 ```html
@@ -168,3 +158,14 @@ Open a issue to propose a PR, get it approved, sign the [CLA](https://github.com
 ### License
 
 VanillaView is [MIT licensed](./LICENSE).
+
+## Haiku
+
+> When you get around
+>
+> To taking over the world
+>
+> The humble vanillaview
+>
+> Will be your steadfast friend
+
