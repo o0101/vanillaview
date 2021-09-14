@@ -7,6 +7,8 @@ VanillaView is a vanilla JS module for UI.
 
 [Learn how to use VanillaView in your own project](#Learn).
 
+*Why are there 3 names above in the NPM downloads badges? **Because** these are the 3 (so far) iterations of this project and their respective names. ;P ;)xx*
+
 ## Features
 
 - minimal updates with no vDOM overhead
