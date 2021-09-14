@@ -1,4 +1,4 @@
-# [VanillaView](https://github.com/i5ik/vanillaview/) &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/i5ik/vanillaview/blob/main/LICENSE) [![npm version](https://img.shields.io/npm/v/vanillaviewjs.svg?style=flat)](https://www.npmjs.com/package/vanillaviewjs) 
+# [VanillaView](https://github.com/i5ik/vanillaview/) &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/i5ik/vanillaview/blob/main/LICENSE) [![npm version](https://img.shields.io/npm/v/vanillaviewjs.svg?style=flat)](https://www.npmjs.com/package/vanillaviewjs) ![npm](https://img.shields.io/npm/dt/brutalist-web?label=brutalist-web%20downloads) ![npm](https://img.shields.io/npm/dt/dumbass?label=dumbass%20downloads) ![npm](https://img.shields.io/npm/dt/vanillaviewjs?label=vanillaview%20downloads)
 
 VanillaView is a vanilla JS module for UI.
 
